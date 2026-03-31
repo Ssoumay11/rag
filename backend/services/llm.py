@@ -1,12 +1,7 @@
 from transformers import pipeline
 
 # Load FLAN-T5 model (best free option)
-generator = pipeline(
-    "text-generation",
-    model="google/flan-t5-small",
-    device=-1  # CPU
-)
-
+generator = pipeline("text-generation", model="gpt2", device=-1)
 def call_llm(prompt):
     try:
         result = generator(
@@ -25,14 +20,12 @@ def general_response(query):
 
 def generate_rag_answer(query, context):
     prompt = f"""
-Use the context to answer the question.
-
 Context:
 {context}
 
-Question:
-{query}
+Q: {query}
 
-Give a short answer in bullet points:
+Answer in bullet points:
+- 
 """
     return call_llm(prompt)
