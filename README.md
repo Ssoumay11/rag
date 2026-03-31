@@ -30,7 +30,7 @@ It intelligently routes queries and retrieves relevant context before generating
 
 ---
 
-## 🔄 Workflow
+## Workflow
 1. User inputs query
 2. Query processed and embedded
 3. FAISS retrieves relevant documents
@@ -39,4 +39,10 @@ It intelligently routes queries and retrieves relevant context before generating
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
+rag-chatbot/
+│
+├── app.py
+├── requirements.txt
+├── faiss.index
+├── meta.pkl
