@@ -8,4 +8,4 @@ app.include_router(chat_router)
 
 @app.get("/")
 def root():
-    return {"message": "RAG Chatbot API is running 🚀"}
+    return {"message": "RAG Chatbot API is running "}

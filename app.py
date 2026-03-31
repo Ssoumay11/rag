@@ -52,12 +52,21 @@ Context:
 {context}
 
 Q: {query}
-A:
+
+Answer in bullet points:
+- 
 """
 
-    result = generator(prompt, max_length=200, do_sample=True)
-    return result[0]["generated_text"]
+    result = generator(
+        prompt,
+        max_length=150,
+        do_sample=True,
+        temperature=0.7,
+        top_p=0.9,
+        repetition_penalty=1.2
+    )
 
+    return result[0]["generated_text"]
 # -----------------------------
 # UI
 # -----------------------------

@@ -8,14 +8,12 @@ def clean_response(text):
 
     for line in lines:
         line = line.strip()
-
         if line and line not in cleaned:
             if not line.startswith("-"):
                 line = "- " + line
             cleaned.append(line)
 
     return "\n".join(cleaned[:5])
-
 
 def rag_response(query, source):
     docs, scores = retrieve_docs(query, source)
